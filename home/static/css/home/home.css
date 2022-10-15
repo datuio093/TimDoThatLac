@@ -1,0 +1,51 @@
+.navbar {
+  position: fixed;
+  z-index: 100;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.slider {
+  width: 100%;
+}
+.slider .slider-video {
+  position: absolute;
+  width: 1000px;
+}
+.slider .slider-text, .slider .container {
+  top: 250px;
+  left: 350px;
+  width: 100%;
+  color: white;
+  width: 1000px;
+}
+.slider .slider-text .row .slider-text-head-h2, .slider .slider-text .row .col, .slider .container .row .slider-text-head-h2, .slider .container .row .col {
+  position: relative;
+  font-weight: 800;
+}
+.slider .slider-text .row .slider-text-body-h2, .slider .container .row .slider-text-body-h2 {
+  position: relative;
+  font-weight: 800;
+}
+
+.body {
+  border-bottom: 1px solid black;
+  padding-bottom: 150px;
+}
+.body .card-list {
+  margin-top: 150px;
+}
+.body .card-list .container .row {
+  margin-top: 50px;
+}
+.body .card-list .container .row .col-sm {
+  color: black;
+}
+
+.footer {
+  padding-top: 20px;
+}/*# sourceMappingURL=home.css.map */
