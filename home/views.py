@@ -11,3 +11,11 @@ def get_login(request):
 def get_register(request):
     return render(request, 'register.html')
 
+def get_search(request):
+    return render(request, 'timkiem.html')
+
+def get_blog(request):
+    return render(request, 'blog.html')
+
+def get_blog_meo_hay(request):
+    return render(request, 'blogmeohay.html')

@@ -45,6 +45,23 @@ header {
 .body .card-list .container .row .col-sm {
   color: black;
 }
+.body .card-list .container .row .col-sm .card:hover {
+  background-color: rgba(0, 0, 0, 0.377) !important;
+  cursor: pointer;
+}
+.body .card-list .container .row .col-sm .card img {
+  height: 300px;
+}
+.body .card-list .container .row .col-sm .card .card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.557);
+}
+.body .card-list .container .row .col-sm .card .card-img-overlay .bi {
+  font-size: 50px;
+}
+.body .card-list .container .row .col-sm .card .card-img-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.377) !important;
+  cursor: pointer;
+}
 
 .footer {
   padding-top: 20px;

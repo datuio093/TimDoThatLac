@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.body {
+  background-color: rgb(246, 246, 246);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.body .container .row .col-sm-4 .form-left {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+.body .container .row .col-sm-4 .form-right {
+  padding: 20px;
+}/*# sourceMappingURL=timkiem.css.map */

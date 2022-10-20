@@ -56,7 +56,30 @@ header{
             .row{
                 margin-top: 50px;
                 .col-sm{
+                    .card:hover {
+                        background-color: rgba(0, 0, 0, 0.377) !important;
+                        cursor: pointer;
+                    }
                     color: black;
+                    .card{
+                        img{
+                            height: 300px;
+                        }
+
+                        .card-img-overlay{
+                            background-color: rgba(0, 0, 0, 0.557);
+                         
+                            .bi{
+                                font-size: 50px;
+                            }
+                        }
+                        .card-img-overlay:hover{
+                            background-color: rgba(0, 0, 0, 0.377) !important;
+                            
+                            cursor: pointer;
+                        }
+                      
+                    }
                 }
             }
         }
@@ -66,6 +89,7 @@ header{
        
     }
 }
+
 
 
 .footer{
