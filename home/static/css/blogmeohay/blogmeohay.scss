@@ -1,0 +1,55 @@
+// .bodytext{
+//     padding: 0 100px;
+// }
+
+.container{
+    // margin: 20px 40px 20px 40px!important;
+}
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    
+
+}
+
+
+
+.body{
+    background-color: rgb(241, 241, 241);
+    padding-top: 100px;
+    .img1{
+        padding: 30px;
+    }
+    img{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.comment{
+    background-color: rgb(241, 241, 241);
+    padding: 20px 60px;
+    .listcomment{
+        .bi{
+            font-size: 60px; 
+            color: rgb(186, 186, 186);
+        }
+
+    }
+    .commentdata{
+        .btn{
+            padding: 10px 30px;
+        }
+        background-color: white;
+        padding: 30px;
+        border-radius: 5px;
+        .mb-3{
+            .mesage{
+                // width: 100px;
+                height: 150px;
+            }
+        }
+       
+    }
+}

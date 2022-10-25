@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Home</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
    
@@ -21,27 +21,27 @@
         <header> 
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
+                  <a class="navbar-brand" href="#">     <img src="{% static 'image/logo.png' %}" class="logo" alt="..." style="width:40px; height:40px"></a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">   </span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
+                        <a class="nav-link active" aria-current="page" href="/home">Trang Chủ</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="/blog">Blog</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Tài Khoản
                         </a> 
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          <li><a class="dropdown-item" href="#">Trang cá nhân</a></li>
+                          <li><a class="dropdown-item" href="#">Đang bài</a></li>
+                      
+                        
                         </ul>
                       </li>
     
@@ -89,47 +89,48 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/1.jpg' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'image/dienthoaid.webp' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Nhặt được điện thoại</h5>
+                      <p class="card-text"> Tôi nhặt được điện thoại di động  gần khu vực  công nghệ cao</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item">Hồ Chí Minh</li>
+                      <li class="list-group-item">trung1817@gmail.com</li>
+                      <li class="list-group-item">0987283223</li>
                     </ul>
               
                   </div>
                 </div>
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{% static 'image/cmndd.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title"> Nhặt Được CMND</h5>
+                      <p class="card-text"> Tôi nhặt được CMND lúc đi làm về thông tin liên lạc bên dưới</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item">Hà Nội</li>
+                      <li class="list-group-item">thanhbinh@gmail.com</li>
+                      <li class="list-group-item">0562378208</li>
                     </ul>
-               
+              
                   </div>
                 </div>
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{% static 'image/vid.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Mất Nhặt Được</h5>
+                      <p class="card-text"> Tôi nhặt được cái ví lúc đi làm về thông tin liên lạc bên dưới</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
-                    </ul> 
-                   
+                      <li class="list-group-item">Đà Nẵng</li>
+                      <li class="list-group-item">datthanhphan@gmail.com</li>
+                      <li class="list-group-item">0347698508</li>
+                    </ul>
+
+
                   </div>
                 </div>
               </div>
@@ -141,45 +142,45 @@
               <div class="row">
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{% static 'image/cmnddn.jpg' %}"  class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Mất chứng mình nhân dân</h5>
+                      <p class="card-text">Bị rơi cmmnd như hình trên đường đi làm bề từ quận 2 về Thủ Đức, thông tin liên hệ với tôi như dưới</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item">Quận 2 - Thủ Đức</li>
+                      <li class="list-group-item"> hoangha@gmail.com</li>
+                      <li class="list-group-item">0564832233</li>
                     </ul>
               
                   </div>
                 </div>
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{% static 'image/vidn.jpg' %}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Rớt ví</h5>
+                      <p class="card-text"> Rớt ví ở khu vực công nghệ cao, có cmnd tên : Hồ Hoàng Hà bác nào nhặt được mình xin hậu tạ</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item">Khu Công Nghê cao - Hồ Chí Minh</li>
+                      <li class="list-group-item"> hahoang@gmail.com</li>
+                      <li class="list-group-item">0987232232</li>
                     </ul>
                 
                   </div>
                 </div>
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{% static 'image/dienthoaidn.jpg' %}"  class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <h5 class="card-title">Rơi điện thoại di động</h5>
+                      <p class="card-text">Mình bị rơi điện thoại như hình ở chợ Đầu Mối, ai nhặt được mình hậu tạ</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
+                      <li class="list-group-item">Chợ Đầu Mối</li>
+                      <li class="list-group-item">hongan@gmail.com </li>
+                      <li class="list-group-item">0347583292</li>
                     </ul>
                
                   </div>
@@ -192,53 +193,41 @@
               <h2> Bí Quyết </h2>
               <div class="row">
                 <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
+                  <div class="card" style="max-width: 540px;">
+                    <a href="#"> 
+                      <img src="{% static 'image/2.webp' %}" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-text">Cách để phòng tránh bị thất lạc đồ</h5>
+                        <p class="card-text"> Chúng ta thường mất khá nhiều thời gian để tìm lại những đồ bị thất lạc chỉ vì không…</p>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </a>
+              </div>
+          <div class="col-sm">
+                        <div class="card" style="max-width: 540px;">
+                          <a href="#"> 
+                            <img src="{% static 'image/3.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-text">Cách tìm kiếm điện thoại thất lạc nhanh nhất</h5>
+                              <p class="card-text"> Đi làm mà để quên điện thoại ở nhà, hẳn cả ngày bạn sẽ bứt rứt không yên. Muốn mở ti…</p>
+                            </div>
+                          </div>
+           
+                  </a>
+              </div>
+        
                 <div class="col-sm">
                   <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    <div class="card" style="max-width: 540px;">
+                      <a href="meohay/"> 
+                              <img src="{% static 'image/1.jpg' %}" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <h5 class="card-text"> Mẹo hay cho người chuyên để thất lạc đồ</h5>
+                                <p class="card-text"> Đi làm mà để quên điện thoại ở nhà, hẳn cả ngày bạn sẽ bứt rứt không yên. Muốn mở ti…</p>
+                              </div>
+                            </div>
+                          </a>
                       </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -357,6 +346,7 @@
             </div>
           </div>
         </div>
+      </div>
         
         <div class="footer"> 
         <p class="text-center">  Điều khoản và Chính sách bảo mật </p> 

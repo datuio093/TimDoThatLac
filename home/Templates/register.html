@@ -75,24 +75,25 @@
                     <li class=""><h3><a href="#" data-form="register">Register</a></h3>
 					</li>
 				</ul>
-                <form>
+                <form action="" method="post">
+                {% csrf_token %}
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label"><i class="bi bi-envelope"></i> Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp">
                       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-person-fill"></i>User Name</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1">
+                        <input type="text" class="form-control" name="User" id="User">
                       </div>
                     
-                    <div class="mb-3">
+                    <div class="mb-3"
                       <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-lock"></i>Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input type="password" class="form-control" name="Password1"  id="Password1">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label"> <i class="bi bi-lock"></i>Password (Again)</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" class="form-control" name="Password2" id="Password2">
                       </div>
                  
                

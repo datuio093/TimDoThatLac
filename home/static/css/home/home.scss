@@ -53,6 +53,7 @@ header{
     padding-bottom: 150px;
     .card-list{
         .container{
+            
             .row{
                 margin-top: 50px;
                 .col-sm{
@@ -62,6 +63,10 @@ header{
                     }
                     color: black;
                     .card{
+                        a{
+                            color: black;
+                            text-decoration: none;
+                        }
                         img{
                             height: 300px;
                         }

@@ -1,0 +1,42 @@
+.body{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(245, 245, 245);
+   
+    .card_body{
+  
+        
+        .card_dt{
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            .tt_info{
+            
+                    h5{
+                        margin-top: 10px; 
+                    }
+                 
+                
+            }
+            .button{
+                .bi{
+                    font-size: 20px;
+                }
+            
+                button{
+                    background-color: rgb(255, 255, 255);
+                    width: 150px !important;
+                    height: 50px;
+                    margin-top: 50px;
+                   
+                }
+
+                button:hover{
+                  border-color: rgb(160, 160, 160);
+                  color: rgb(160, 160, 160);
+                   
+                }
+            }
+        }
+    }
+}

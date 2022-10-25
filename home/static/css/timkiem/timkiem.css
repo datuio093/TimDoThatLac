@@ -4,6 +4,10 @@ header {
   z-index: 100;
 }
 
+* img {
+  height: 300px;
+}
+
 .body {
   background-color: rgb(246, 246, 246);
   padding-top: 100px;
@@ -16,4 +20,8 @@ header {
 }
 .body .container .row .col-sm-4 .form-right {
   padding: 20px;
+}
+.body .container .row .col-sm-4 .form-right .row .col .card img {
+  height: 300px;
+  max-width: 500px;
 }/*# sourceMappingURL=timkiem.css.map */

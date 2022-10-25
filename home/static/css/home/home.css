@@ -49,6 +49,10 @@ header {
   background-color: rgba(0, 0, 0, 0.377) !important;
   cursor: pointer;
 }
+.body .card-list .container .row .col-sm .card a {
+  color: black;
+  text-decoration: none;
+}
 .body .card-list .container .row .col-sm .card img {
   height: 300px;
 }

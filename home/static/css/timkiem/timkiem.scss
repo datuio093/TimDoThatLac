@@ -6,6 +6,9 @@ header{
 
 }
 
+*img{
+    height: 300px;
+}
 .body{
     background-color: rgb(246, 246, 246);
      padding-top: 100px;
@@ -26,6 +29,17 @@ header{
                 }
                 .form-right{
                     padding: 20px;
+                    .row{
+                        .col{
+                            .card{
+                                img{
+                                    height: 300px;
+                                    max-width: 500px;
+                                }
+                                
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+
+         <link rel="stylesheet" type"text/css" href="{% static 'css/mypost/mypost.css' %}"> 
+
+         <!-- CSS onlysss -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+    <body>
+        <header> 
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">     <img src="{% static 'image/logo.png' %}" class="logo" alt="..." style="width:40px; height:40px"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">   </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Trang Chủ</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Tài Khoản
+                        </a> 
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Trang cá nhân</a></li>
+                          <li><a class="dropdown-item" href="#">Đang bài</a></li>
+                      
+                        
+                        </ul>
+                      </li>
+    
+                      <li class="nav-item">
+                        <a class="nav-link" href="/register">Đăng Kí</a>
+                      </li>
+    
+                      <li class="nav-item">
+                        <a class="nav-link" href="/login">Đăng Nhập</a>
+                      </li>
+    
+                      <li class="nav-item">
+                        <button class="btn btn-outline-dark" type="submit">Đăng Bài</button>
+                      </li>
+                 
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-dark" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </header>   
+
+        <div class="body text-center"> 
+            {% comment %} <i class="bi bi-emoji-frown"></i>
+            <p class="text-center"> No Item </p> {% endcomment %}
+            <div class="row container">
+                
+                <div class="col-sm">
+                  <div class="card mb-3" style="max-width: 540px;">
+                    <img src="{% static 'image/cmndd.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"> Nhặt Được CMND</h5>
+                      <p class="card-text"> Tôi nhặt được CMND lúc đi làm về thông tin liên lạc bên dưới</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Hà Nội</li>
+                      <li class="list-group-item">thanhbinh@gmail.com</li>
+                      <li class="list-group-item">0562378208</li>
+                    </ul>
+              
+                  </div>
+                </div>
+            
+              </div>
+        </body
+    </body>
+</html>

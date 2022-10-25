@@ -19,12 +19,17 @@ from home import views as home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/' , home.get_home),
+    path('home/' , home.get_home,name="home"),
     path('login/' ,  home.get_login),
     path('register/', home.get_register),
     path('',home.get_home),
     path('timkiem/' , home.get_search),
     path('blog/' , home.get_blog),
-    path('blog/meohay/' , home.get_blog_meo_hay)
+    path('blog/meohay/' , home.get_blog_meo_hay),
+    path('dangtin/' , home.get_dang_tin),
+    path('editaccount/' , home.get_doi_mat_khau),
+    path('mypost/' , home.get_my_post),
+      path('chitiet/' , home.get_chi_tiet)
+
 
 ]
