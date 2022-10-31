@@ -1,14 +1,18 @@
 .navbar{
-    position: fixed;
+    // position: fixed;
     z-index: 100;
+    background-color: rgb(0, 0, 0) !important;
 }
 header{
     width: 100%;
     position: fixed;
     z-index: 100;
-
+    background-color: rgb(0, 0, 0) !important   ;
 }
-
+// .navbar.scrolled {
+//     background-color: rgb(117, 0, 0) !important;
+//     transition: background-color 200ms linear;
+//   }
 .slider{
     // background-color: black;
     width: 100%;
@@ -49,7 +53,8 @@ header{
 }
 
 .body{
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
+    background-color: rgb(241, 241, 241);
     padding-bottom: 150px;
     .card-list{
         .container{
@@ -99,4 +104,7 @@ header{
 
 .footer{
     padding-top: 20px;
+    a{
+        text-decoration: none;
+    }
 }

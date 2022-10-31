@@ -20,8 +20,8 @@ from home import views as home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/' , home.get_home,name="home"),
-    path('login/' ,  home.get_login),
-    path('register/', home.get_register),
+    path('login/' ,  home.get_login, name="login"),
+    path('register/', home.get_register, name="register"),
     path('',home.get_home),
     path('timkiem/' , home.get_search),
     path('blog/' , home.get_blog),
@@ -29,7 +29,8 @@ urlpatterns = [
     path('dangtin/' , home.get_dang_tin),
     path('editaccount/' , home.get_doi_mat_khau),
     path('mypost/' , home.get_my_post),
-      path('chitiet/' , home.get_chi_tiet)
+    path('chitiet/' , home.get_chi_tiet),
+    path('activate/<uidb64>/<token>' , home.get_activate, name="activate")
 
 
 ]
