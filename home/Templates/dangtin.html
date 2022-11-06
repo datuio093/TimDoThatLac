@@ -75,7 +75,7 @@
             <h3 class="col col-lg-3"> Your listing details </h3>
           </div>
       
-          <form>
+          <form action="" method="POST">
           <div class="card_body row justify-content-md-center"> 
         
             <div class="card_dt col col-lg-6"> 
@@ -84,11 +84,11 @@
                   <legend> <i class="bi bi-pen"></i> General</legend>
                   <div class="mb-3">
                     <label for="TextInput" class="form-label"> Tiêu đề</label>
-                    <input type="text" id="TextInput" class="form-control" placeholder="">
+                    <input type="text" id="TextInput" class="form-control" name="tieude" placeholder="">
                   </div>
                   <div class="mb-3">
                     <label for="Select" class="form-label">Loại </label>
-                    <select id="Select" class="form-select">
+                    <select name ="luachon" id="Select" class="form-select">
                       <option>Đồ Thất Lạc</option>
                       <option>Đồ Nhặt Được</option>
                     
@@ -96,7 +96,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="Select" class="form-label">Loại</label>
-                    <select id="Select" class="form-select">
+                    <select name ="loai" id="Select" class="form-select">
                       <option>Ví/Bóp</option>
                       <option>Giấy tờ</option>
                       <option>CCCD/CMND</option>
@@ -113,7 +113,7 @@
                   </div> {% endcomment %}
                   <div class="mb-3">
                     <label for="TextInput" class="form-label"> Mô Tả Chi Tiết</label>
-                    <textarea style="width:100%; height:200px">   </textarea>
+                    <textarea name="mota" style="width:100%; height:200px">   </textarea>
                   </div>
   
               
@@ -129,7 +129,7 @@
                   <legend> <i class="bi bi-geo-alt"></i> Địa Chỉ</legend>
                   <div class="mb-3">
                     <label for="TextInput" class="form-label">Địa Chỉ Rơi</label>
-                    <input type="text" id="TextInput" class="form-control" placeholder="Địa chỉ">
+                    <input name="diachi" type="text" id="TextInput" class="form-control" placeholder="Địa chỉ">
                   </div>
                  
                   {% comment %} <div class="mb-3">
@@ -142,7 +142,7 @@
                   </div> {% endcomment %}
                   {% comment %} <div class="mb-3">
                     <label for="TextInput" class="form-label"> Mô Tả Chi Tiết</label>
-                    <textarea style="width:100%">   </textarea>
+                    <textarea name="mota" style="width:100%">   </textarea>
                   </div> {% endcomment %}
                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7838.684254869503!2d106.70676642475235!3d10.785086936675276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1547181657956" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                   <div id="map" style="width:100%"></div>
@@ -166,8 +166,8 @@
                               id="imagePreview">
                       </div>
                       <div class="imageUpload mb-3">
-                          <input type="file" id="imageUploadInput" accept=".jpg,.png">
-                      
+                          <input name = "images" type="file" id="imageUploadInput" accept=".jpg,.png">
+                    
                    
                       </div>
                       <div id="uploadFileStatus"></div>
@@ -211,15 +211,15 @@
                   <legend> <i class="bi bi-telephone"></i> Thông Tin Liên Hệ</legend>
                   <div class="mb-3">
                     <label for="TextInput" class="form-label"> Họ Tên</label>
-                    <input type="text" id="TextInput" class="form-control" placeholder="Họ Tên">
+                    <input name="name" type="text" id="TextInput" class="form-control" placeholder="Họ Tên">
                   </div>
                   <div class="mb-3">
                     <label for="TextInput" class="form-label"> Số Điện Thoại</label>
-                    <input type="text" id="TextInput" class="form-control" placeholder=" Số Điện Thoại">
+                    <input name="pnum" type="text" id="TextInput" class="form-control" placeholder=" Số Điện Thoại">
                   </div>
                   <div class="mb-3">
                     <label for="TextInput" class="form-label"> Email</label>
-                    <input type="text" id="TextInput" class="form-control" placeholder="Email">
+                    <input name="email" type="text" id="TextInput" class="form-control" placeholder="Email">
                   </div>
                
             
