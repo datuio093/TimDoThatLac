@@ -1,9 +1,12 @@
 from base64 import urlsafe_b64decode
+from email import message
 # from email.message import EmailMessage
 from gzip import FNAME
 from lib2to3.pgen2.tokenize import generate_tokens
 from multiprocessing import context
+import re
 from tkinter.messagebox import NO
+from turtle import title
 from unittest.result import failfast
 from timdothatlac import settings
 from django.shortcuts import render, redirect
@@ -18,6 +21,8 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from . tokens import generate_tokens
+from .models import mypost
+
 # from .form import NewUserForm
 # from django.contrib.auth import login
 # from django.contrib import messages
@@ -131,6 +136,23 @@ def get_blog_meo_hay(request):
     return render(request, 'blogmeohay.html')
 
 def get_dang_tin(request):
+    # create post 
+    if request.method == "POST":
+        title = request.POST['tieude']
+        type = request.POST['luachon']
+        object = request.POST['loai']
+        descrip = request.POST['mota']
+        address = request.POST['diachi']
+        name = request.POST['name']
+        pnum = request.POST['pnum']
+        email = request.POST['email']
+    #save post to db
+        Mypost = mypost.objects.create(title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email)
+        Mypost.save()
+    #display successfull post messages
+        messages.success(request, "Your Post has been successfully create")
+    #redirect to main page or mypost
+        return redirect('mypost')
     return render(request, 'dangtin.html')
 
 def get_chi_tiet(request):
@@ -141,7 +163,14 @@ def get_doi_mat_khau(request):
 
 
 def get_my_post(request):
-    return render(request, 'mypost.html')
+    #get data sorted by ID
+    if request.method == "GET":
+        onedata = mypost.objects.filter().order_by('-pk')
+        context = {
+            'post':onedata
+        }
+    #render data to html
+    return render(request, 'mypost.html', context)
 
 def get_activate(request, uidb64, token):
     try:

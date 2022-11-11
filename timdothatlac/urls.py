@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home import views as home
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,7 +30,7 @@ urlpatterns = [
     path('blog/meohay/' , home.get_blog_meo_hay),
     path('dangtin/' , home.get_dang_tin),
     path('editaccount/' , home.get_doi_mat_khau),
-    path('mypost/' , home.get_my_post),
+    path('mypost/' , home.get_my_post, name="mypost"),
     path('chitiet/' , home.get_chi_tiet),
     path('activate/<uidb64>/<token>' , home.get_activate, name="activate")
 
