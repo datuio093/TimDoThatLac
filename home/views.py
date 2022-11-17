@@ -146,9 +146,8 @@ def get_dang_tin(request):
         name = request.POST['name']
         pnum = request.POST['pnum']
         email = request.POST['email']
-        image = request.POST['images']
     #save post to db
-        Mypost = mypost.objects.create(title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email, image=image)
+        Mypost = mypost.objects.create(title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email)
         Mypost.save()
     #display successfull post messages
         messages.success(request, "Your Post has been successfully create")

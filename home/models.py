@@ -11,7 +11,6 @@ class mypost(models.Model):
     name = models.TextField(max_length=1000)
     pnum = models.IntegerField()
     email = models.TextField(max_length=1000)
-    images = models.ImageField(upload_to='images/', null=True)
 
 
     def _str_(self):
