@@ -13,7 +13,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
+
 from django.core.mail import send_mail, EmailMessage
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -34,6 +35,10 @@ def get_home(request):
     return render(request, 'home.html' , )
 
 def get_login(request):
+
+    #redirect to home when user signin
+    if request.user.is_authenticated:
+        return redirect('home')   
     
     if request.method == "POST":
          username = request.POST['user']
@@ -44,21 +49,27 @@ def get_login(request):
         #  if users.is_active == False:
         #     messages.error(request, "You Must Be Confirm Email Before Login")
         #     return redirect('login')
+ 
         
 
          if users is not None:
             login(request,users)
-            # return redirect('home')
+            
             fname = users.first_name
             lname = users.last_name
             return render( request , 'home.html' , {'fname' : fname, 'lname' : lname}  )
-            # return redirect('login', {'fname' : fname, 'lname' : lname})
+            
          else:
-            messages.error(request, "Login Fail")           
+            messages.error(request, "Login Fail")   
+            
+          
             
     return render(request , 'login.html')
 
 def get_register(request):
+    if request.user.is_authenticated:
+        return redirect('home') 
+
     if request.method == "POST":
 
         email = request.POST['Email']
@@ -136,6 +147,8 @@ def get_blog_meo_hay(request):
     return render(request, 'blogmeohay.html')
 
 def get_dang_tin(request):
+    if request.user.is_authenticated == False:
+        return redirect('login') 
     # create post 
     if request.method == "POST":
         title = request.POST['tieude']
@@ -187,3 +200,7 @@ def get_activate(request, uidb64, token):
     else:
         return redirect(request, 'activation_fail.html')
  
+def logout_user(request):
+    logout(request)
+    messages.success(request,"Logged Out Successfully")
+    return redirect('login')
