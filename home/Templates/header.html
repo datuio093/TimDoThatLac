@@ -11,11 +11,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">Trang Chủ</a>
+                <a class="nav-link active" aria-current="page" href="{% url "home" %}">Trang Chủ</a>
               </li>
-              <li class="nav-item">
+              {% comment %} <li class="nav-item">
                 <a class="nav-link" href="/blog">Blog</a>
-              </li>
+              </li> {% endcomment %}
               <li class="nav-item dropdown">
           
                 {% if user.is_authenticated %}
@@ -23,9 +23,9 @@
                   Xin Chào,  {{ user.first_name }}  {{ user.last_name }} 
                 </a>  
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/logout">LogOut</a></li>
-                  <li><a class="dropdown-item" href="/mypost">Trang cá nhân</a></li>
-                  <li><a class="dropdown-item" href="/dangtin">Đang bài</a></li>
+                  <li><a class="dropdown-item" href="{% url "logout" %}">LogOut</a></li>
+                  <li><a class="dropdown-item" href="{% url "mypost" %}">Trang cá nhân</a></li>
+                  <li><a class="dropdown-item" href="{% url "post" %}">Đang bài</a></li>
                   <li><a class="dropdown-item" href="{% url "change_password" %}">Đổi mật khẩu</a></li>
               
                 </ul>

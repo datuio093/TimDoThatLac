@@ -31,12 +31,12 @@ urlpatterns = [
     path('blog/meohay/' , home.get_blog_meo_hay), 
 
   
-    path('dangtin/' , home.get_dang_tin),
+    path('dangtin/' , home.get_dang_tin,name="post"),
 
     path('editaccount/' , home.get_doi_mat_khau),
     path('mypost/' , home.get_my_post, name="mypost"),
     path('chitiet/' , home.get_chi_tiet),
-    path('logout/',home.logout_user),
+    path('logout/',home.logout_user,name="logout"),
     path('activate/<uidb64>/<token>' , home.get_activate, name="activate"),
 
 
