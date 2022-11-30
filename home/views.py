@@ -23,7 +23,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from . tokens import generate_tokens
 from .models import mypost
-
+from .form import *
 # from .form import NewUserForm
 # from django.contrib.auth import login
 # from django.contrib import messages
@@ -159,8 +159,9 @@ def get_dang_tin(request):
         name = request.POST['name']
         pnum = request.POST['pnum']
         email = request.POST['email']
+        images = request.FILES.get('images')
     #save post to db
-        Mypost = mypost.objects.create(title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email)
+        Mypost = mypost.objects.create(title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email,images=images)
         Mypost.save()
     #display successfull post messages
         messages.success(request, "Your Post has been successfully create")

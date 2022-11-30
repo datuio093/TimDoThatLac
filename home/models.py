@@ -9,8 +9,9 @@ class mypost(models.Model):
     descrip = models.TextField(max_length=10000000)
     address = models.TextField()
     name = models.TextField(max_length=1000)
-    pnum = models.IntegerField()
+    pnum = models.IntegerField(null=True, blank=True)
     email = models.TextField(max_length=1000)
+    images = models.ImageField(null=True ,blank=True , upload_to='images/')
 
 
     def _str_(self):
