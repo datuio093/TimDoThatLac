@@ -24,7 +24,7 @@
             <h3 class="col col-lg-3"> Your listing details </h3>
           </div>
       
-          <form action="" method="POST">
+          <form action="" method="POST" enctype="multipart/form-data">
           <div class="card_body row justify-content-md-center"> 
         
             <div class="card_dt col col-lg-6"> 
@@ -115,6 +115,7 @@
                               id="imagePreview">
                       </div>
                       <div class="imageUpload mb-3">
+                        {{ mypost.images }}
                           <input name = "images" type="file" id="imageUploadInput" accept=".jpg,.png">
                     
                    
