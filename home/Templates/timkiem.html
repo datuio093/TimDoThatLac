@@ -68,103 +68,34 @@
                           </form>
                     </div>
                   </div>
-                  <div class="form-right col text-center">
+                  <div class="form-right col-sm-8 text-center">
                     <div class="row">
-                      <div class="col">
+                         {% comment %} end rol - 6 {% endcomment %}
+                         {% for x in post %}
+                 
+                       <div class="card_right col-6">
+                        <a style="text-decoration:none; color:black" href="{% url "show_post" x.id %}"> 
                           <div class="card mb-3" style="max-width: 540px;">
-                              <img  src="{% static 'image/dienthoaidn.jpg' %}" class="card-img-top" alt="...">
+                              <img  src="{{x.images.url}}" class="card-img-top" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title">Đồ Nhặt Được</h5>
-                                <p class="card-text">Nhặt được điện thoại tại gần khu công nghê cao</p>
+                                <h5 class="card-title">{{x.title}}</h5>
+                                <p class="card-text">{{x.type}}</p>
                               </div>
                               <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Hồ Chi Minh</li>
-                                <li class="list-group-item">datthanh@gmail.com</li>
-                                <li class="list-group-item">0346574323</li>
+                                <li class="list-group-item">{{x.address}}</li>
+                                <li class="list-group-item">{{x.email}}</li>
+                                <li class="list-group-item">0{{x.pnum}}</li>
                               </ul>
-                        
                             </div>
-                          </div>
-                          <div class="col-sm">
-                            <div class="card mb-3" style="max-width: 540px;">
-                              <img style="max-width: 540px;height: 300px" src="{% static 'image/cmnddn.jpg' %}" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <h5 class="card-title">Bị Mất CMND</h5>
-                                <p class="card-text">Bị Mất CMND gần khu vực quận 4</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Hồ Chí Minh</li>
-                                <li class="list-group-item">hoangdat@gmail.com</li>
-                                <li class="list-group-item">0347658283</li>
-                              </ul>
+                          </a>
+                         </div>
+                       
+                         {% endfor %}
+                          {% comment %} end rol - 6 {% endcomment %}
+                          
                          
-                            </div>
-                          </div>
-                  </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <img  src="{% static 'image/dienthoaid.webp' %}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Đồ Nhặt Được</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">An item</li>
-                                      <li class="list-group-item">A second item</li>
-                                      <li class="list-group-item">A third item</li>
-                                    </ul>
-                              
-                                  </div>
-                                </div>
-                                <div class="col-sm">
-                                  <div class="card mb-3" style="max-width: 540px;">
-                                    <img style="max-width: 540px;height: 300px" src="{% static 'image/cmndd.jpg' %}" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">An item</li>
-                                      <li class="list-group-item">A second item</li>
-                                      <li class="list-group-item">A third item</li>
-                                    </ul>
-                               
-                                  </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">An item</li>
-                                      <li class="list-group-item">A second item</li>
-                                      <li class="list-group-item">A third item</li>
-                                    </ul>
-                              
-                                  </div>
-                                </div>
-                                <div class="col-sm">
-                                  <div class="card mb-3" style="max-width: 540px;">
-                                    <img src="..." class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">An item</li>
-                                      <li class="list-group-item">A second item</li>
-                                      <li class="list-group-item">A third item</li>
-                                    </ul>
-                               
-                                  </div>
-                                </div>
-                        </div>
+                    </div>
+                   
                   </div>
                  
                 </div>

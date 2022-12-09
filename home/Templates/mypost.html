@@ -39,8 +39,8 @@
                       <li class="list-group-item">{{x.email}}</li>
                       <li class="list-group-item">0{{x.pnum}}</li>
                     </ul>
-                    <a href="{% url "delete_post" x.id %}"> DELETE </a>
-                    <a href="{% url "show_post" x.id %}"> SHOW </a>
+                    <a style="text-decoration:none; color:black" href="{% url "delete_post" x.id %}"> DELETE </a>
+                    <a style="text-decoration:none; color:black" href="{% url "show_post" x.id %}"> SHOW </a>
                   </div>
                 </div>
                   {% endif %}

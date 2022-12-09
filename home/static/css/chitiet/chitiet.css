@@ -29,6 +29,15 @@
   background-color: rgb(245, 245, 245);
   padding: 20px 60px;
 }
+.comment .img_avt {
+  width: 50px;
+  height: 50px;
+}
+.comment .comment_br {
+  background-color: #fff;
+  margin-bottom: 50px;
+  padding: 20px;
+}
 .comment .listcomment .bi {
   font-size: 60px;
   color: rgb(186, 186, 186);

@@ -26,7 +26,7 @@ urlpatterns = [
     path('accounts/login/' ,  home.get_login, name="login"),
     path('accounts/register/', home.get_register, name="register"),
     path('',home.get_home),
-    path('timkiem/' , home.get_search),
+    path('timkiem/' , home.get_tim_kiem_post,  name="tim_kiem_post"),
     path('blog/' , home.get_blog),
     path('blog/meohay/' , home.get_blog_meo_hay), 
 
@@ -39,6 +39,7 @@ urlpatterns = [
     path('mypost/' , home.get_my_post, name="mypost"),
     path('mypost/delete/<event_id>',home.delete_post, name="delete_post"),
     path('show/<event_id>', home.show_post, name="show_post"),
+  
 
 
     path('chitiet/' , home.get_chi_tiet),
@@ -47,6 +48,7 @@ urlpatterns = [
 
     # #cmt
     # path('send-comment', home.send_comment, name="send_comment"),
+    # path('comment/<event_id>', home.get_my_cmt, name="send_comment"),
 
 
     #reset password

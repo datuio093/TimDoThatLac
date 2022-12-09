@@ -22,7 +22,7 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from . tokens import generate_tokens
-from .models import mypost
+from .models import mypost,comment
 from .form import *
 # from .form import NewUserForm
 # from django.contrib.auth import login
@@ -186,6 +186,17 @@ def get_my_post(request):
     #render data to html
     return render(request, 'mypost.html', context)
 
+def get_tim_kiem_post(request):
+    #get data sorted by ID
+    if request.method == "GET":
+        onedata = mypost.objects.filter().order_by('-pk')
+        context = {
+            'post':onedata
+        }
+    #render data to html
+    return render(request, 'timkiem.html', context)
+
+
 def get_activate(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
@@ -214,17 +225,37 @@ def delete_post(request, event_id):
 
 def show_post(request, event_id):
     event = mypost.objects.get(pk=event_id)
-   
-    # if request.method == "POST":
-    #     email = request.POST['email']
-    #     message = request.POST['message']
-       
-    # #save post to db
-    #     Cmt = comment.objects.create(user=email,descrip=message)
-    #     Cmt.save()
-    #     return redirect('mypost')
 
-    return render(request, 'chitiet.html' , {'event': event})
+    if request.method == "GET":
+        data = comment.objects.filter().order_by('-pk')
+        context = {
+            'cmt':data
+        }
+        return render(request, "chitiet.html" , {'event': event,  'cmt':data})
+
+        
+    if request.method == "POST":
+        if request.user.is_authenticated == False:
+            return redirect('login') 
+        user = request.user.username 
+        postid = event_id
+        email = request.POST['email']
+        message = request.POST['message']
+    #save post to db
+        # if(request.POST.checked('check_hide') != True):
+        Cmt = comment.objects.create(user=user,postid=postid,mail=email,message=message)
+        Cmt.save()
+        # else:
+        #     Cmt = comment.objects.create(user="Ẩn Danh",postid=postid,mail="Ẩn Danh",message=message)
+        #     Cmt.save()
+        data = comment.objects.filter().order_by('-pk')
+        context = {
+            'cmt':data
+        }
+        return render(request, "chitiet.html" , {'event': event,  'cmt':data})
+        
+    return render(request, 'chitiet.html'  , {'event': event}   )
+
 
 
 

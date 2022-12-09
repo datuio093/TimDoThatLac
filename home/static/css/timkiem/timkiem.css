@@ -21,7 +21,11 @@ header {
 .body .container .row .col-sm-4 .form-right {
   padding: 20px;
 }
-.body .container .row .col-sm-4 .form-right .row .col .card img {
+.body .container .row .col-sm-4 .form-right .row .card_right .card img {
   height: 300px;
   max-width: 500px;
+}
+.body .container .row .col-sm-4 .form-right .row .card_right .card:hover {
+  background-color: rgba(0, 0, 0, 0.377) !important;
+  cursor: pointer;
 }/*# sourceMappingURL=timkiem.css.map */

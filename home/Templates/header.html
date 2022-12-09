@@ -13,6 +13,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url "home" %}">Trang Chủ</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url "tim_kiem_post" %}">Tổng Hợp</a>
+              </li>
               {% comment %} <li class="nav-item">
                 <a class="nav-link" href="/blog">Blog</a>
               </li> {% endcomment %}
@@ -27,12 +30,13 @@
                   <li><a class="dropdown-item" href="{% url "mypost" %}">Trang cá nhân</a></li>
                   <li><a class="dropdown-item" href="{% url "post" %}">Đang bài</a></li>
                   <li><a class="dropdown-item" href="{% url "change_password" %}">Đổi mật khẩu</a></li>
+                 
               
                 </ul>
                 <li class="nav-item">
                   <a href="/dangtin">   <button class="btn btn-outline-dark" type="submit">Đăng Bài</button> </a>    
                      </li>
-                
+            
                 
               </li>
                 {% else %}

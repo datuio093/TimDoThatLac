@@ -17,3 +17,16 @@ class mypost(models.Model):
 
     def _str_(self):
         return self.name
+
+
+class comment(models.Model):
+    
+    postid = models.IntegerField(null=True, blank=True)
+    user = models.TextField(null=True)
+    mail = models.TextField(null=True)
+    message = models.TextField(null=True)
+    
+
+
+    def _str_(self):
+        return self.name

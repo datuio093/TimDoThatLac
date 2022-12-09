@@ -10,12 +10,14 @@ header{
     height: 300px;
 }
 .body{
+ 
     background-color: rgb(246, 246, 246);
      padding-top: 100px;
      padding-bottom: 100px;
 
      .container{
         .row{
+            
             .col-sm-4{
                 .form-left{
                   
@@ -28,15 +30,21 @@ header{
                  
                 }
                 .form-right{
+                    
                     padding: 20px;
                     .row{
-                        .col{
+                        .card_right{
                             .card{
+                                
                                 img{
                                     height: 300px;
                                     max-width: 500px;
                                 }
                                 
+                            }
+                            .card:hover {
+                                background-color: rgba(0, 0, 0, 0.377) !important;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -45,3 +53,4 @@ header{
         }
      }
 }   
+
