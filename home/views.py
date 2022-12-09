@@ -50,7 +50,6 @@ def get_login(request):
         #     messages.error(request, "You Must Be Confirm Email Before Login")
         #     return redirect('login')
  
-        
 
          if users is not None:
             login(request,users)
@@ -151,6 +150,7 @@ def get_dang_tin(request):
         return redirect('login') 
     # create post 
     if request.method == "POST":
+        username = request.POST['username']
         title = request.POST['tieude']
         type = request.POST['luachon']
         object = request.POST['loai']
@@ -161,7 +161,7 @@ def get_dang_tin(request):
         email = request.POST['email']
         images = request.FILES.get('images')
     #save post to db
-        Mypost = mypost.objects.create(title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email,images=images)
+        Mypost = mypost.objects.create(user=username,title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email,images=images)
         Mypost.save()
     #display successfull post messages
         messages.success(request, "Your Post has been successfully create")
@@ -205,3 +205,26 @@ def logout_user(request):
     logout(request)
     messages.success(request,"Logged Out Successfully")
     return redirect('login')
+
+def delete_post(request, event_id):
+    event = mypost.objects.get(pk=event_id)
+    event.delete()
+    return redirect('mypost')
+
+
+def show_post(request, event_id):
+    event = mypost.objects.get(pk=event_id)
+   
+    # if request.method == "POST":
+    #     email = request.POST['email']
+    #     message = request.POST['message']
+       
+    # #save post to db
+    #     Cmt = comment.objects.create(user=email,descrip=message)
+    #     Cmt.save()
+    #     return redirect('mypost')
+
+    return render(request, 'chitiet.html' , {'event': event})
+
+
+

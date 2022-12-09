@@ -34,10 +34,19 @@ urlpatterns = [
     path('dangtin/' , home.get_dang_tin,name="post"),
 
     path('editaccount/' , home.get_doi_mat_khau),
+
+    #post
     path('mypost/' , home.get_my_post, name="mypost"),
+    path('mypost/delete/<event_id>',home.delete_post, name="delete_post"),
+    path('show/<event_id>', home.show_post, name="show_post"),
+
+
     path('chitiet/' , home.get_chi_tiet),
     path('logout/',home.logout_user,name="logout"),
     path('activate/<uidb64>/<token>' , home.get_activate, name="activate"),
+
+    # #cmt
+    # path('send-comment', home.send_comment, name="send_comment"),
 
 
     #reset password

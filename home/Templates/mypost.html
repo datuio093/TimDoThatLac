@@ -26,21 +26,24 @@
    
             <div class="row container">
               {% for x in post %}
+                {% if x.user == user.username %}
                 <div class="col-sm-4">
                   <div class="card mb-3" >
                     <img src={{x.images.url}} class="card-img-top" alt="Image Not Found">
                     <div class="card-body">
                       <h5 class="card-title">{{x.title}}</h5>
-                      <p class="card-text"> {{x.descrip}}</p>
+                      <p class="card-text"> {{x.type}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">{{x.address}}</li>
                       <li class="list-group-item">{{x.email}}</li>
-                      <li class="list-group-item">{{x.pnum}}</li>
+                      <li class="list-group-item">0{{x.pnum}}</li>
                     </ul>
+                    <a href="{% url "delete_post" x.id %}"> DELETE </a>
+                    <a href="{% url "show_post" x.id %}"> SHOW </a>
                   </div>
-           
                 </div>
+                  {% endif %}
                 {% endfor %}
               </div>
           

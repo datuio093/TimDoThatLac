@@ -28,29 +28,36 @@
                         <div class="info container imageUploadContainer mb-3">
                           <div>
                               <img class="mb-2" style="width:100%"
-                                  src="{% static 'image/noiamge.webp' %}" 
+                                  src="{{event.images.url}}" 
                                   alt="Ảnh xem trước" 
                                   id="imagePreview">
                           </div>
+                          <h1>
+                       
+                            <span id="fileInfomation_name"> {{event.title}} </span>
+                          </h1>
+                          <div> 
                           <h5>
                             Loại : 
-                            <span id="fileInfomation_name">Đồ Thất Lạc</span>
+                 
+                            <span id="fileInfomation_name"> {{event.type}} </span>
                           </h5>
+                       
                            <h5>
                             Chi Tiết : 
-                            <span id="fileInfomation_name">Bị rơi cmmnd như hình trên đường đi làm bề từ quận 2 về Thủ Đức, thông tin liên hệ với tôi như dưới</span>
+                            <span id="fileInfomation_name">{{event.descrip}}</span>
                            </h5>
                            <h5>
                             Địa chỉ : 
-                            <span id="fileInfomation_name">Hồ Chí Minh</span>
+                            <span id="fileInfomation_name">{{event.address}}</span>
                            </h5>
                            <h5>
                             SĐT : 
-                            <span id="fileInfomation_name">092832324 </span>
+                            <span id="fileInfomation_name">0{{event.pnum}} </span>
                            </h5>
                            <h5>
                            Email : 
-                            <span id="fileInfomation_name"> datthanhphan@gmail.com </span>
+                            <span id="fileInfomation_name"> {{event.email}} </span>
                            </h5>
                           <div class="button row justify-content-md-center text-center"> 
                             <div class="col"> <button> <i class="bi bi-share"></i>  Share</button> </div>
@@ -58,17 +65,57 @@
                             <div class="col"> <button> <i class="bi bi-envelope"></i> Send an email</button> </div>
                             <div class="col"> <button><i class="bi bi-info-circle"></i> Report</button> </div>
                           </div>
+                         
                       </div>
+                      
                       </div>
                   
-                  
-              
                  </div>
-               
-                </div>    
+                 
+                </div> 
+
+                
+              </div>    
               
             </div>
-
+          </div>
+          
+          <div class="comment row justify-content-md-center"> 
+            <div class="col col-lg-8 ">
+              <div class="headertext row text-center"> 
+                <h1 > Comment </h1>
+              </div>
+              <div class="listcomment row text-center"> 
+                <div >
+                  <i class="bi bi-emoji-frown"></i>
+                  <p> No comments yet. </p>
+                 </div>
+              </div>
+              
+               <div class="commentdata"> 
+                <form action="" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-labe3">Your Message</label>
+                    <textarea  type="textarea" class="mesage form-control" name="message" id="message"> </textarea>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Save my name, email, and website in this browser for the next time I comment.</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit Comment</button>
+                </form>
+               </div>
+            </div>
+          </div>
+       
+         
             <div class="footer container "> 
               {% include 'footer.html' %} 
             </div>

@@ -23,4 +23,24 @@
 .body .card_body .card_dt .button button:hover {
   border-color: rgb(160, 160, 160);
   color: rgb(160, 160, 160);
+}
+
+.comment {
+  background-color: rgb(245, 245, 245);
+  padding: 20px 60px;
+}
+.comment .listcomment .bi {
+  font-size: 60px;
+  color: rgb(186, 186, 186);
+}
+.comment .commentdata {
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+}
+.comment .commentdata .btn {
+  padding: 10px 30px;
+}
+.comment .commentdata .mb-3 .mesage {
+  height: 150px;
 }/*# sourceMappingURL=chitiet.css.map */

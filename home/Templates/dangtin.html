@@ -25,6 +25,7 @@
           </div>
       
           <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
           <div class="card_body row justify-content-md-center"> 
         
             <div class="card_dt col col-lg-6"> 
@@ -32,8 +33,12 @@
                 <fieldset >
                   <legend> <i class="bi bi-pen"></i> General</legend>
                   <div class="mb-3">
+                    <label for="TextInput" class="form-label"> User Name </label>
+                    <input onkeydown="return false"  type="" id="" class="form-control" name="username" value="{{user.username}}"> 
+                  </div>
+                  <div class="mb-3">
                     <label for="TextInput" class="form-label"> Tiêu đề</label>
-                    <input type="text" id="TextInput" class="form-control" name="tieude" placeholder="">
+                    <input  type="text" id="TextInput" class="form-control" name="tieude" placeholder="">
                   </div>
                   <div class="mb-3">
                     <label for="Select" class="form-label">Loại </label>

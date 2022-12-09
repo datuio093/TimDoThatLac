@@ -3,6 +3,7 @@ from .models import *
 
 # Create your models hereeee.
 class mypost(models.Model):
+    user = models.TextField(null=True)
     title = models.TextField(max_length=1000)
     type = models.TextField()
     object = models.TextField()
