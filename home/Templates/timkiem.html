@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
    
-
+        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
          {% comment %} <link rel="stylesheet" type"text/css" href="{% static 'css/home/home.css' %}">  {% endcomment %}
          <link rel="stylesheet" type"text/css" href="{% static 'css/timkiem/timkiem.css' %}"> 
@@ -72,9 +72,9 @@
                     <div class="row">
                          {% comment %} end rol - 6 {% endcomment %}
                          {% for x in post %}
-                 
-                       <div class="card_right col-6">
-                        <a style="text-decoration:none; color:black" href="{% url "show_post" x.id %}"> 
+                   
+                       <div class="card_right col-sm-6">
+                        {% comment %} <a style="text-decoration:none; color:black" href="{% url "show_post" x.id %}"> 
                           <div class="card mb-3" style="max-width: 540px;">
                               <img  src="{{x.images.url}}" class="card-img-top" alt="...">
                               <div class="card-body">
@@ -87,7 +87,29 @@
                                 <li class="list-group-item">0{{x.pnum}}</li>
                               </ul>
                             </div>
-                          </a>
+                          </a> {% endcomment %}
+                          <div class="blog-card">
+                            <div class="meta">
+                              <div class="photo" style="background-image: url({{x.images.url}})"></div>
+                              <ul class="details">
+                                <li class="author"><a href="#">{{x.address}}</a></li>
+                                <li class="date">0{{x.pnum}}</li>
+                                <li class="tags">
+                                  {{x.email}}
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="description">
+                              <h1>{{x.title}}</h1>
+                              <h2>{{x.type}}</h2>
+                              <p> {{x.descrip}} </p>
+                              <p class="read-more">
+                                <a href="{% url "show_post" x.id %}">Read More</a>
+                              </p>
+                            </div>
+                          </div>
+                         
+
                          </div>
                        
                          {% endfor %}
@@ -109,6 +131,7 @@
         <div class="footer container "> 
           {% include 'footer.html' %} 
         </div>
+        <script src="https://kit.fontawesome.com/de308d7612.js" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> 
     </body>
 </html>

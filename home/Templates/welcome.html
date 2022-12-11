@@ -1,0 +1,52 @@
+{% load static %}
+
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+
+
+         {% comment %} <link rel="stylesheet" type"text/css" href="{% static 'css/home/home.css' %}">  {% endcomment %}
+         <link rel="stylesheet" type"text/css" href="{% static 'css/welcome/welcome.css' %}"> 
+
+         <!-- CSS onlysss -->
+         <script src="https://kit.fontawesome.com/de308d7612.js" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+
+<aside class="profile-card">
+    <header>
+      <!-- here’s the avatar -->
+      <a target="_blank" href="{% url "home" %}">
+        <img src="{% static 'image/R.png' %}" class="hoverZoomLink"> 
+      </a>
+  
+      <!-- the username -->
+      <h1>
+       WelCome, 
+            </h1>
+  
+      <!-- and role or location -->
+      <h2>
+          {{ user.first_name }}  {{ user.last_name }} 
+            </h2>
+  
+    </header>
+  
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+  
+      <p>
+        It takes monumental improvement for us to change how we live our lives. Design is the way we access that improvement.
+      </p>
+  
+    </div>
+  
+  
+  </aside>

@@ -56,7 +56,7 @@ def get_login(request):
             
             fname = users.first_name
             lname = users.last_name
-            return render( request , 'home.html' , {'fname' : fname, 'lname' : lname}  )
+            return render( request , 'welcome.html' , {'fname' : fname, 'lname' : lname}  )
             
          else:
             messages.error(request, "Login Fail")   
