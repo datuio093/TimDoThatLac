@@ -23,6 +23,11 @@
         <div class="body"> 
             <div class="card_body row justify-content-md-center"> 
                 <div class="card_dt col col-lg-6"> 
+
+                  <h2>
+                    <span id="fileInfomation_name"> {{event.title}} </span>
+                  </h2>
+
                       <legend> <i class="bi bi-images"></i> Ảnh</legend>
                       <div class="tt_info mb-3">
                         <div class="info container imageUploadContainer mb-3">
@@ -34,33 +39,32 @@
                                   id="imagePreview">
                                 </a>
                           </div>
-                          <h1>
-                       
-                            <span id="fileInfomation_name"> {{event.title}} </span>
-                          </h1>
+                     
+
                           <div> 
-                          <h5>
+                            <div > 
+                          <p>
                             Loại : 
-                 
-                            <span id="fileInfomation_name"> {{event.type}} </span>
-                          </h5>
-                       
-                           <h5>
+                      
+                            <span  id="fileInfomation_name"> {{event.type}} </span>
+                          </p>
+                        </div>
+                           <p>
                             Chi Tiết : 
                             <span id="fileInfomation_name">{{event.descrip}}</span>
-                           </h5>
-                           <h5>
+                           </p>
+                           <p>
                             Địa chỉ : 
                             <span id="fileInfomation_name">{{event.address}}</span>
-                           </h5>
-                           <h5>
+                           </p>
+                           <p>
                             SĐT : 
                             <span id="fileInfomation_name">0{{event.pnum}} </span>
-                           </h5>
-                           <h5>
+                           </p>
+                           <p>
                            Email : 
                             <span id="fileInfomation_name"> {{event.email}} </span>
-                           </h5>
+                           </p>
                           <div class="button row justify-content-md-center text-center"> 
                             <div class="col"> <button> <i class="bi bi-share"></i>  Share</button> </div>
                             <div class="col"> <button><i class="bi bi-chat"></i> Message</button> </div>
@@ -81,8 +85,10 @@
             
             <div class="col col-lg-8 ">
 
-              {% comment %} {% if cmt.len()  == 0 %} {% endcomment %}
-              <div class="headertext row text-center"> 
+             
+              {% if not cmt.postid is None %}
+               {% comment %} {% if cmt.len()  == 0 %} {% endcomment %}
+               <div class="headertext row text-center"> 
                 <h1 > Comment </h1> 
               </div>
               <div class="listcomment row text-center"> 
@@ -92,11 +98,11 @@
                  </div>
               </div>
               {% comment %} {% endif %} {% endcomment %}
-           
+              {% endif %}
 
               {% comment %} cmt {% endcomment %}
               {% for x in cmt %}
-           
+              
               {% if x.postid == event.id %}
               <div class="comment_br"> 
               <div class="headertext row "> 
@@ -121,7 +127,7 @@
          
 
 
-              
+              {% if user.is_authenticated %}
                <div class="commentdata"> 
                 <form action="" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
@@ -142,14 +148,23 @@
                   <button type="submit" class="btn btn-primary">Submit Comment</button>
                 </form>
                </div>
+       
+
+               {% else %}
+
+               <p> Bạn phải <a href="{% url "login" %}"> đăng nhập </a>  để gửi phản hồi. </p> 
+               {% endif %}
             </div>
           </div>
-       
+
+          
+          
          
             <div class="footer container "> 
               {% include 'footer.html' %} 
             </div>
-                     
+          
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> 
     </body>
 </html>

@@ -1,18 +1,22 @@
 .body{
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: rgb(245, 245, 245);
-   
+ 
     .card_body{
      
         
         .card_dt{
+        
             background-color: rgb(255, 255, 255);
             padding: 20px;
             border-radius: 10px;
             
             .tt_info{
-              
+                p{
+                    font-size: 20px;
+                   }
                     h5{
                         margin-top: 10px; 
                     }
