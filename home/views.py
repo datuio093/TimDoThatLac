@@ -24,6 +24,8 @@ from django.utils.encoding import force_bytes, force_str
 from . tokens import generate_tokens
 from .models import mypost,comment
 from .form import *
+from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # from .form import NewUserForm
 # from django.contrib.auth import login
 # from django.contrib import messages
@@ -180,21 +182,40 @@ def get_my_post(request):
     #get data sorted by ID
     if request.method == "GET":
         onedata = mypost.objects.filter().order_by('-pk')
+        page = request.GET.get('page', 1)
         context = {
             'post':onedata
         }
+        paging = Paginator(onedata, per_page=6)
+        try:
+            post = paging.page(page)
+        except PageNotAnInteger:
+            post = paging.page(1)
+        except EmptyPage:
+            post = paging.page(paging.num_pages)
+
     #render data to html
-    return render(request, 'mypost.html', context)
+
+    return render(request, 'mypost.html', {'post':post})
 
 def get_tim_kiem_post(request):
     #get data sorted by ID
     if request.method == "GET":
         onedata = mypost.objects.filter().order_by('-pk')
+        page = request.GET.get('page', 1)
         context = {
             'post':onedata
         }
+        paging = Paginator(onedata, per_page=6)
+        try:
+            post = paging.page(page)
+        except PageNotAnInteger:
+            post = paging.page(1)
+        except EmptyPage:
+            post = paging.page(paging.num_pages)
+
     #render data to html
-    return render(request, 'timkiem.html', context)
+    return render(request, 'timkiem.html', {'post':post})
 
 
 def get_activate(request, uidb64, token):
@@ -254,7 +275,7 @@ def show_post(request, event_id):
         }
         return render(request, "chitiet.html" , {'event': event,  'cmt':data})
         
-    return render(request, 'chitiet.html'  , {'event': event}   )
+    return render(request, 'chitiet.html'  , {'event': event} )
 
 
 
