@@ -26,12 +26,13 @@
                 <div class="container text-center">
                   <h2> Blog </h2>
                   <div class="row">
+                    {% for x in blog %}
                     <div class="col-sm col-sm-4">
-                      {% for x in blog %}
+              
                   <div class="card" style="max-width: 540px">
 
                     <a href="{% url "blog_chi_tiet" x.id %}"> 
-                            <img src="{{x.image}}" style="max-width: 540px;height:400px" class="card-img-top" alt="...">
+                            <img src="{{x.image}}" style="max-width: 540px;height:350px" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-text"> {{x.title}}</h5>
                               <p class="card-text"> {{x.descrip_short}} </p>
