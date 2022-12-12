@@ -26,72 +26,24 @@
                 <div class="container text-center">
                   <h2> Blog </h2>
                   <div class="row">
-                    <div class="col-sm">
-           
-                  <div class="card" style="max-width: 540px;">
-                    <a href=""> 
-                            <img src="{% static 'image/1.jpg' %}" class="card-img-top" alt="...">
+                    <div class="col-sm col-sm-4">
+                      {% for x in blog %}
+                  <div class="card" style="max-width: 540px">
+
+                    <a href="{% url "blog_chi_tiet" x.id %}"> 
+                            <img src="{{x.image}}" style="max-width: 540px;height:400px" class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-text"> Mẹo hay cho người chuyên để thất lạc đồ</h5>
-                              <p class="card-text"> Đi làm mà để quên điện thoại ở nhà, hẳn cả ngày bạn sẽ bứt rứt không yên. Muốn mở ti…</p>
+                              <h5 class="card-text"> {{x.title}}</h5>
+                              <p class="card-text"> {{x.descrip_short}} </p>
                             </div>
                           </div>
                         </a>
                     </div>
+                    {% endfor %}
+                    
            
                
-                    <div class="col-sm">
-                        <div class="card" style="max-width: 540px;">
-                          <a href="meohay/"> 
-                            <img src="{% static 'image/2.webp' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-text">Cách để phòng tránh bị thất lạc đồ</h5>
-                              <p class="card-text"> Chúng ta thường mất khá nhiều thời gian để tìm lại những đồ bị thất lạc chỉ vì không…</p>
-                            </div>
-                          </div>
-                        </a>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="max-width: 540px;">
-                          <a href="#"> 
-                            <img src="{% static 'image/3.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-text">Cách tìm kiếm điện thoại thất lạc nhanh nhất</h5>
-                              <p class="card-text"> Đi làm mà để quên điện thoại ở nhà, hẳn cả ngày bạn sẽ bứt rứt không yên. Muốn mở ti…</p>
-                            </div>
-                          </div>
-                    </div>
-                  </a>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                        <div class="card" style="max-width: 540px;">
-                            <img src="{% static 'image/4.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-text">Cách tìm lại đồ thất lạc nhanh nhất</h5>
-                              <p class="card-text">Giữ bình tĩnh và tự nhủ rằng bạn sẽ tìm thấy nó Bạn có thể đang hoảng sợ và dẫn đến…</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="max-width: 540px;">
-                            <img src="{% static 'image/5.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-text">Bí quyết để không bao giờ thất lạc đồ lạc</h5>
-                              <p class="card-text">Khiến cho các loại đồ đạc nổi bật để bạn không bị mất chúng dễ dàng. Nếu bạn có xu…</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="card" style="max-width: 540px;">
-                            <img src="{% static 'image/6.jpg' %}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-text">Bí quyết tìm đồ thất lạc trong nhà.</h5>
-                              <p class="card-text">Tất cả mọi người đều có thể làm mất hoặc thất lạc mọi thứ theo thời gian. Việc phải…</p>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
+       
                 </div>
               </div>
               </div>

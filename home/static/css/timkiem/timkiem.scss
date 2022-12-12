@@ -14,7 +14,7 @@ header{
 .body{
  
     background-color: rgb(246, 246, 246);
-     padding-top: 100px;
+     padding-top: 150px;
      padding-bottom: 100px;
 
      .container{
@@ -125,7 +125,7 @@ header{
       position: absolute;
       top: 0;
       bottom: 0;
-      left: -100%;
+      left: -300%;
       margin: auto;
       transition: left .2s;
       background: rgba(#000, .6);
@@ -233,7 +233,10 @@ header{
   
     @media (min-width: 640px) {
       flex-direction: row;
-      max-width: 700px;
+      max-width: 900px;
+      
+      width: 350px;
+   
       .meta {
         flex-basis: 40%;
         height: auto;

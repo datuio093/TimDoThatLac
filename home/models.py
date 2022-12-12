@@ -30,3 +30,17 @@ class comment(models.Model):
 
     def _str_(self):
         return self.name
+
+
+class blog(models.Model):
+    
+
+    title = models.TextField(null=True)
+    image = models.TextField(null=True)
+    descrip_short = models.TextField(null=True)
+    descrip = models.TextField(null=True)
+    
+
+
+    def _str_(self):
+        return self.name

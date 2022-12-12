@@ -28,7 +28,7 @@ urlpatterns = [
     path('',home.get_home),
     path('timkiem/' , home.get_tim_kiem_post,  name="tim_kiem_post"),
     path('blog/' , home.get_blog),
-    path('blog/meohay/' , home.get_blog_meo_hay), 
+    path('blog/<event_id>/' , home.get_blog_chi_tiet, name="blog_chi_tiet"), 
 
   
     path('dangtin/' , home.get_dang_tin,name="post"),

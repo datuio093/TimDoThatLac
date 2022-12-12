@@ -34,7 +34,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def get_home(request):
 
-    return render(request, 'home.html' , )
+    return render(request, 'home.html' )
 
 def get_login(request):
 
@@ -142,10 +142,18 @@ def get_search(request):
     return render(request, 'timkiem.html')
 
 def get_blog(request):
+ 
+    if request.method == "GET":
+        data = blog.objects.filter().order_by('-pk')
+        context = {
+            'blog':data
+        }
+        return render(request, "blog.html" , {'blog':data})
     return render(request, 'blog.html')
 
-def get_blog_meo_hay(request):
-    return render(request, 'blogmeohay.html')
+def get_blog_chi_tiet(request,event_id):
+    event = blog.objects.get(pk=event_id)
+    return render(request, 'blogmeohay.html', {'event':event})
 
 def get_dang_tin(request):
     if request.user.is_authenticated == False:
@@ -206,7 +214,7 @@ def get_tim_kiem_post(request):
         context = {
             'post':onedata
         }
-        paging = Paginator(onedata, per_page=6)
+        paging = Paginator(onedata, per_page=12)
         try:
             post = paging.page(page)
         except PageNotAnInteger:

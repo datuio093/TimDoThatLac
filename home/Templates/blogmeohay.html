@@ -19,12 +19,12 @@
     </head>
     <body>
       {% include 'header.html' %} 
-        <div class="body  "> 
+        <div class="body "> 
           <div class="headertext row text-center"> 
             <h1 > Cách để phòng tránh bị thất lạc đồ </h1>
           </div>
           <div class="container  ">  
-            <img src="{% static 'image/2.webp' %}" class="img1 card-img " alt="...">
+            {% comment %} <img src="{% static 'image/2.webp' %}" class="img1 card-img " alt="..."> {% endcomment %}
           </div>
        
           <div class="bodytext row  justify-content-md-center "> 
@@ -32,42 +32,7 @@
         
 
               <div class="bodytextdt col col-lg-8 "> 
-                <p> Chúng ta thường mất khá nhiều thời gian để tìm 
-                  lại những đồ bị thất lạc chỉ vì không nhớ đã để chúng ở đâu. 
-                  Lý do rất đơn giản, chính là khi đó chúng ta đã đặt tâm trí 
-                  vào chuyện khác, dẫn đến lực chú ý bị phân tán và tạo thành hiện tượng “tiện tay vứt bừa”. 
-                  Dưới đây là 3 mẹo vặt có thể giúp cải thiện tình trạng trên.  </p>
-                  <img src="{% static 'image/2.webp' %}" class="card-img" alt="...">
-                  <h5> 
-                    Chú ý đến mỗi việc mình làm        </h5> 
-                    <p>
-  Đây là một phương pháp đơn giản nhất để bạn không bị thất lạc đồ. Chính là phải luôn chú ý đến từng thời điểm, từng việc làm. Bỏ quên chìa khoá ở đâu đó thường có một vài nguyên khiến chúng phân tán, chẳng hạn mải suy nghĩ xem tối nay sẽ ăn gì, ngày mai cần hoàn thành công việc gì, hoặc điện thoại đang đổ chuông cần nhấc máy ngay… 
-</p>
-  <p>
-  Để thành thục thói quen lưu tâm đến mỗi việc mình làm không phải là chuyện dễ dàng, nhưng chỉ có như vậy chúng ta mới giải quyết tận gốc việc thất lạc đồ.
-</p>
-  <p>
-  Kỳ thực, cuộc sống sẽ ra sao, đa số là bắt nguồn từ những thói quen nhỏ tạo thành. Nếu chúng ta thường xuyên không để ý đến những thói quen nhỏ này, cuộc sống của chúng ta sẽ dễ bị lèo lái theo hướng khó kiểm soát. Một trong những tình huống nguy hiểm có thể thấy chính là khi lái xe trên đường, nếu như trong đầu cứ luôn suy nghĩ đến những việc này việc khác mà không tập trung nhìn đường, khả năng xảy ra tai nạn sẽ rất cao.
-  
-  <h5> Đặt đồ vật ở vị trí cố định  </h5>
-  
-  Với những đồ vật nhỏ, bạn có thể không cần phải tăng thêm gánh nặng cho bộ não và nhất định phải nhớ chi tiết cụ thể xem chúng nằm ở những vị trí nào, mà chỉ cần tìm một chỗ cố định để đặt chúng là được. Những đồ chuyên dụng nhỏ như chìa khoá, bấm móng tay, kéo….thường rất dễ bị quên. Nếu bạn thường bị phân tâm hoặc thường xuyên cần làm nhiều việc một lúc, độ lưu tâm của bản thân lại không đủ, vậy thì hãy đặt đồ đạc ở một vị trí cố định.
-</p>
-<p> 
-  “Vị trí cố định” là nơi mà bạn có thể nghĩ ra được, ví như: trong giỏ, trên giá để sách, hộc tủ, móc treo đồ… hoặc bất kỳ chỗ nào bạn cảm thấy thuận tiện nhất. Phương pháp này có nhược điểm là không thể giúp bạn rèn luyện sức ghi nhớ của bộ não, nhưng có thể giúp bạn hạn chế tối đa khả năng bị thất lạc đồ. 
-  </p>
-  <h5>Nếu tìm không thấy đồ thất lạc, cần làm gì? </h5>
-  <img src="{% static 'image/chiakhoa.webp  ' %}" class="card-img" alt="...">
-   <p>
-    Để phòng tránh việc thực sự thất lạc những đồ nhỏ hoặc không nhớ đã để đâu, có một vài lời khuyên như sau:
-   </p>
-   <p>
-    Trước tiên, hãy thử quay lại nơi mà bạn vừa đi qua. Có thể là trong xe, nhà xe, nhà vệ sinh, cốp xe… Ngoài ra, cũng cần lưu ý đến nhất túi quần hoặc túi áo mà bạn mặc gần nhất, hoặc trong túi xách, balo. Nếu nơi làm việc của bạn bề bộn giấy tờ, thì nhất định cần lật chúng lên để kiểm tra, đôi khi hồ sơ giấy tờ lại chính là nơi che lấp đồ mà bạn đang tìm. 
-   </p>
-
-   <p>
-    Cũng không loại trừ trường hợp đồ thất lạc bị kẹp trong khe ghế sofa, hoặc rơi xuống gầm giường. Còn nếu bạn thường xuyên phải đi tìm điện thoại của mình, thì đừng ngại cài đặt thêm một vài ứng dụng có tác dụng theo dõi vị trí điện thoại để biết nó đang ở đâu.
-   </p>
+                {{event.descrip|safe}}
               </div>
               
          </div>
