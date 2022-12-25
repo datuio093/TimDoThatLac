@@ -1,0 +1,159 @@
+
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+
+}
+.navbar{
+    position: fixed;
+    z-index: 100;
+}
+
+
+.body{
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    background-color: rgb(245, 245, 245);
+ 
+    .card_body{
+     
+        
+        .card_dt{
+        
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            
+            .tt_info{
+                p{
+                    font-size: 20px;
+                   }
+                    h5{
+                        margin-top: 10px; 
+                    }
+                 
+                
+            }
+            .button{
+                .bi{
+                    font-size: 20px;
+                }
+            
+                button{
+                    background-color: rgb(255, 255, 255);
+                    width: 150px !important;
+                    height: 50px;
+                    margin-top: 50px;
+                   
+                }
+
+                button:hover{
+                  border-color: rgb(160, 160, 160);
+                  color: rgb(160, 160, 160);
+                   
+                }
+            }
+        }
+    }
+}
+
+.comment{
+    
+    .img_avt{
+        width: 50px;
+        height: 50px;
+    }
+    .comment_br{
+        // background-color: #fff;
+        // margin-bottom: 50px;
+        padding: 20px;
+        .tip {
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            background: transparent;
+            border: 10px solid #ccc;
+          }
+          
+          .tip-up {
+            top: -25px; /* Same as body margin top + border */
+            left: 10px;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top-color: transparent;
+          }
+          
+          .tip-down {
+            bottom: -25px;
+            left: 10px;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;  
+          }
+          
+          .tip-left {
+            top: 10px;
+            left: -25px;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;  
+          }
+          
+          .tip-right {
+            top: 10px;
+            right: -25px;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;  
+          }
+          
+          .dialogbox .body {
+            position: relative;
+            max-width: 900px;
+            height: auto;
+            // margin: 10px 10px;
+            padding: 5px;
+            background-color: #DADADA;
+            border-radius: 3px;
+            border: 5px solid #ccc;
+          }
+          
+          .body .message {
+            min-height: 30px;
+            border-radius: 3px;
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #797979;
+          }
+    }
+    background-color: rgb(245, 245, 245);
+   
+    padding: 20px 60px;
+    .listcomment{
+        
+        .bi{
+            font-size: 60px; 
+            color: rgb(186, 186, 186);
+        }
+
+    }
+    .commentdata{
+        .btn{
+            padding: 10px 30px;
+        }
+        background-color: white;
+        padding: 30px;
+        border-radius: 5px;
+        .mb-3{
+            .mesage{
+                // width: 100px;
+                height: 150px;  
+            }
+        }
+       
+    }
+}
+

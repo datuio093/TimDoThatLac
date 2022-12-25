@@ -1,0 +1,330 @@
+// header{
+//     width: 100%;
+//     position: fixed;
+//     z-index: 100;
+
+// }
+.navbar{
+  position: fixed;
+  z-index: 100;
+  background-color: rgb(0, 0, 0) !important;
+}
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background-color: rgb(0, 0, 0) !important   ;
+}
+
+
+// .navbar.scrolled {
+//     background-color: rgb(117, 0, 0) !important;
+//     transition: background-color 200ms linear;
+//   }
+// .slider{
+//     // background-color: black;
+//     width: 100%;
+//     // height: 1000px;
+   
+   
+
+//     .slider-video{
+//         position: absolute;
+//         width: 1000px;
+//     }
+
+//     .slider-text, .container{
+     
+//         top: 250px;
+//         left: 350px;
+//         width: 100%;
+//         color: white;
+//         width: 1000px;
+//         .row{
+//             .slider-text-head-h2 , .col{
+//                 // left: 30rem;
+//                 // top: 20rem;
+//                 position: relative;
+//                 font-weight: 800;
+              
+//             }
+//             .slider-text-body-h2{
+//                 // left: 27rem;
+//                 // top: 20rem;
+//                 position: relative;
+//                 font-weight: 800;
+//             }
+//         }
+  
+       
+//     }
+// }
+/* Reset. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Panels. */
+.splitview {
+  top : 100px;
+  position: relative;
+  width: 100%;
+  min-height: 45vw;
+  overflow: hidden;
+}
+
+.panel {
+
+  position: absolute;
+  width: 100vw;
+  min-height: 45vw;
+  overflow: hidden;
+}
+
+  .panel .content {
+      position: absolute;
+      width: 100vw;
+      min-height: 45vw;
+      color: #FFF;
+  }
+
+  .panel .description {
+      width: 25%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+  }
+
+  .panel img {
+      box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.15);
+      width: 35%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+
+.bottom {
+  background-color: rgb(44, 44, 44);
+  z-index: 1;
+}
+
+  .bottom .description {
+      right: 5%;
+  }
+
+.top {
+  background-color: rgb(77, 69, 173);
+  z-index: 2;
+  width: 50vw;
+
+  /*-webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);*/
+}
+
+  .top .description {
+      left: 5%;
+  }
+
+/* Handle. */
+.handle {
+  height: 100%;
+  position: absolute;
+  display: block;
+  background-color: rgb(253, 171, 0);
+  width: 5px;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+}
+
+/* Skewed. */
+.skewed .handle {
+  top: 50%;
+  transform: rotate(30deg) translateY(-50%);
+  height: 200%;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  transform-origin: top;
+}
+
+.skewed .top {
+  transform: skew(-30deg);
+  margin-left: -1000px;
+  width: calc(50vw + 1000px);
+}
+
+.skewed .top .content {
+  transform: skew(30deg);
+  margin-left: 1000px;
+}
+
+/* Responsive. */
+@media (max-width: 900px) {
+  .splitview {
+    top : 120px;
+    position: relative;
+    width: 100%;
+    min-height: 45vw;
+    overflow: hidden;
+
+  }
+  body {
+      font-size: 75%;
+  }
+}
+.body{
+    // border-bottom: 1px solid black;
+    background-color: rgb(241, 241, 241);
+   
+    padding-bottom: 150px;
+    .card-list{
+        .container{
+            padding-top: 150px;
+            .row{
+                margin-top: 50px;
+                .col-sm{
+                    .card:hover {
+                        background-color: rgba(0, 0, 0, 0.377) !important;
+                        cursor: pointer;
+                    }
+                    color: black;
+                    .card{
+                        a{
+                            color: black;
+                            text-decoration: none;
+                        }
+                        img{
+                            height: 300px;
+                        }
+
+                        .card-img-overlay{
+                            // background-color: rgba(0, 0, 0, 0.557);
+                         
+                            .bi{
+                                font-size: 50px;
+                            }
+                        }
+                        .card-img-overlay:hover{
+                            // background-color: rgba(0, 0, 0, 0.377) !important;
+                            
+                            cursor: pointer;
+                        }
+                      
+                    }
+                }
+            }
+        }
+       
+       
+        // margin-top: 150px;
+       
+    }
+}
+
+
+
+.footer{
+    padding-top: 20px;
+    a{
+        text-decoration: none;
+    }
+}
+
+// * {box-sizing:border-box}
+
+// /* Slideshow container */
+// .slideshow-container {
+//   max-width: 1000px;
+//   position: relative;
+//   margin: auto;
+// }
+
+// /* Hide the images by default */
+// .mySlides {
+//   display: none;
+// }
+
+// /* Next & previous buttons */
+// .prev, .next {
+//   cursor: pointer;
+//   position: absolute;
+//   top: 50%;
+//   width: auto;
+//   margin-top: -22px;
+//   padding: 16px;
+//   color: white;
+//   font-weight: bold;
+//   font-size: 18px;
+//   transition: 0.6s ease;
+//   border-radius: 0 3px 3px 0;
+//   user-select: none;
+// }
+
+// /* Position the "next button" to the right */
+// .next {
+//   right: 0;
+//   border-radius: 3px 0 0 3px;
+// }
+
+// /* On hover, add a black background color with a little bit see-through */
+// .prev:hover, .next:hover {
+//   background-color: rgba(0,0,0,0.8);
+// }
+
+// /* Caption text */
+// .text {
+//   color: #f2f2f2;
+//   font-size: 15px;
+//   padding: 8px 12px;
+//   position: absolute;
+//   bottom: 8px;
+//   width: 100%;
+//   text-align: center;
+// }
+
+// /* Number text (1/3 etc) */
+// .numbertext {
+//   color: #f2f2f2;
+//   font-size: 12px;
+//   padding: 8px 12px;
+//   position: absolute;
+//   top: 0;
+// }
+
+// /* The dots/bullets/indicators */
+// .dot {
+//   cursor: pointer;
+//   height: 15px;
+//   width: 15px;
+//   margin: 0 2px;
+//   background-color: #bbb;
+//   border-radius: 50%;
+//   display: inline-block;
+//   transition: background-color 0.6s ease;
+// }
+
+// .active, .dot:hover {
+//   background-color: #717171;
+// }
+
+// /* Fading animation */
+// .fade {
+//   animation-name: fade;
+//   animation-duration: 1.5s;
+// }
+
+// @keyframes fade {
+//   from {opacity: .4}
+//   to {opacity: 1}
+// }

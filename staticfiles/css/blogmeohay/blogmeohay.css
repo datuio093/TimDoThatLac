@@ -1,0 +1,37 @@
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.body {
+  background-color: rgb(241, 241, 241);
+  padding-top: 150px;
+}
+.body .img1 {
+  padding: 30px;
+}
+.body img {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.comment {
+  background-color: rgb(241, 241, 241);
+  padding: 20px 60px;
+}
+.comment .listcomment .bi {
+  font-size: 60px;
+  color: rgb(186, 186, 186);
+}
+.comment .commentdata {
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+}
+.comment .commentdata .btn {
+  padding: 10px 30px;
+}
+.comment .commentdata .mb-3 .mesage {
+  height: 150px;
+}/*# sourceMappingURL=blogmeohay.css.map */
