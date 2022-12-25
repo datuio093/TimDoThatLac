@@ -13,20 +13,11 @@
    
 }
 
-.flex4.scroll{
-    
-  display: block;
-  
-    
- }
-
 /* .nav-link.scrolled{
     color: rgb(255, 255, 255) !important;
 } */
 
-/* .flexMain.scrolled{
-  display: none;
-} */
+
 .navbar{
     background-color:  hsla(0, 0%, 0%, 0);
     /* color: rgb(255, 255, 255); */
@@ -120,14 +111,3 @@
     outline:none
   }
 
-  .navbar{
-    position: fixed;
-    z-index: 100;
-    background-color: rgb(0, 0, 0) !important;
-  }
-  header{
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    background-color: rgb(0, 0, 0) !important   ;
-  }

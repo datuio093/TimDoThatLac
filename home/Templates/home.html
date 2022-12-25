@@ -23,15 +23,39 @@
       
       {% include 'header.html' %} 
  
-        <div class="slider"> 
+        {% comment %} <div class="slider"> 
           <div class="container-1">
             <div class="row">
                 <iframe class="col-sm" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="Liberty - New York City Timelapse 4K" width="640" height="360" src="https://www.youtube.com/embed/U3_uxUSeZV4?controls=0&amp;rel=0&amp;playsinline=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.timdothatlac.com&amp;widgetid=1" id="widget2" style="width: 1476px;height: 830.25px;"></iframe>
             </div>
           </div>
-        </div>
-        
-          
+        </div> {% endcomment %}
+       
+        <div class="splitview skewed">
+          <div class="panel bottom">
+              <div class="content">
+                  <div class="description">
+                      <h1>Bạn Bị Mất Đồ</h1>
+                      <p>Hãy chia sẻ để có thể tìm thấy món đồ nhanh chóng.</p>
+                  </div>
+  
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/original-image.jpg" alt="Original">
+              </div>
+          </div>
+  
+          <div class="panel top">
+              <div class="content">
+                  <div class="description">
+                      <h1>Bạn Nhặt Được Đồ </h1>
+                      <p>Hãy chia sẻ để có thể tìm thấy chủ nhân của món đồ nhanh chóng.</p>
+                  </div>
+  
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/duotone-image.jpg" alt="Duotone">
+              </div>
+          </div>
+  
+          <div class="handle"></div>
+      </div>
         <div class="body "> 
         <div class="container"> 
           <div class="card-list"> 
@@ -304,7 +328,31 @@
           {% include 'footer.html' %} 
         </div>
        
-
+        <script> 
+          document.addEventListener('DOMContentLoaded', function() {
+            var parent = document.querySelector('.splitview'),
+                topPanel = parent.querySelector('.top'),
+                handle = parent.querySelector('.handle'),
+                skewHack = 0,
+                delta = 0;
+        
+            // If the parent has .skewed class, set the skewHack var.
+            if (parent.className.indexOf('skewed') != -1) {
+                skewHack = 1000;
+            }
+        
+            parent.addEventListener('mousemove', function(event) {
+                // Get the delta between the mouse position and center point.
+                delta = (event.clientX - window.innerWidth / 2) * 0.5;
+        
+                // Move the handle.
+                handle.style.left = event.clientX + delta + 'px';
+        
+                // Adjust the top panel width.
+                topPanel.style.width = event.clientX + skewHack + delta + 'px';
+            });
+        });
+        </script>
 
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>  

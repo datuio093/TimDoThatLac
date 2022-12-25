@@ -100,6 +100,7 @@ def get_register(request):
         myuser = User.objects.create_user(username , email , pass1 )
         myuser.first_name = fname
         myuser.last_name = lname
+    
         myuser.is_active = False
         myuser.save()
         messages.success(request, "Your Account has been successfully created")
@@ -165,13 +166,16 @@ def get_dang_tin(request):
         type = request.POST['luachon']
         object = request.POST['loai']
         descrip = request.POST['mota']
-        address = request.POST['diachi']
+        v1,address = request.POST['country'].split('-')
+        v1,city = request.POST['city'].split('-')
+        v1,district =  request.POST['district'].split('-')
         name = request.POST['name']
         pnum = request.POST['pnum']
         email = request.POST['email']
         images = request.FILES.get('images')
     #save post to db
-        Mypost = mypost.objects.create(user=username,title=title, type=type,object=object,descrip=descrip,address=address,name=name,pnum=pnum,email=email,images=images)
+        Mypost = mypost.objects.create(user=username,title=title, type=type,object=object,descrip=descrip,address=address,city=city,district=district,name=name,pnum=pnum,email=email,images=images)
+        # ,city=city,district=district
         Mypost.save()
     #display successfull post messages
         messages.success(request, "Your Post has been successfully create")
@@ -285,6 +289,14 @@ def show_post(request, event_id):
         
     return render(request, 'chitiet.html'  , {'event': event} )
 
-
+def show_profile(request):
+    if request.method == "POST":
+        username = request.user.username 
+        user = User.objects.get(username = username)
+        user.first_name = request.POST['first_name']
+        user.last_name = request.POST['last_name']
+        user.save()
+        return render(request, 'profile.html')
+    return render(request, 'profile.html')
 
 

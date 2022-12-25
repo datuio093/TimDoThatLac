@@ -44,33 +44,33 @@
                           <div> 
                             <div > 
                           <p>
-                            Loại : 
+                          <strong>          Loại :  </strong>
                       
                             <span  id="fileInfomation_name"> {{event.type}} </span>
                           </p>
                         </div>
                            <p>
-                            Chi Tiết : 
+                            <strong>    Chi Tiết :  </strong>
                             <span id="fileInfomation_name">{{event.descrip}}</span>
                            </p>
                            <p>
-                            Địa chỉ : 
-                            <span id="fileInfomation_name">{{event.address}}</span>
+                           <strong> Địa chỉ : </strong>
+                            <span id="fileInfomation_name">{{event.address}},{{event.city}},{{event.district}}</span>
                            </p>
                            <p>
-                            SĐT : 
+                          <strong>  SĐT :  </strong>
                             <span id="fileInfomation_name">0{{event.pnum}} </span>
                            </p>
                            <p>
-                           Email : 
+                            <strong> Email : </strong>
                             <span id="fileInfomation_name"> {{event.email}} </span>
                            </p>
-                          <div class="button row justify-content-md-center text-center"> 
-                            <div class="col"> <button> <i class="bi bi-share"></i>  Share</button> </div>
-                            <div class="col"> <button><i class="bi bi-chat"></i> Message</button> </div>
-                            <div class="col"> <button> <i class="bi bi-envelope"></i> Send an email</button> </div>
-                            <div class="col"> <button><i class="bi bi-info-circle"></i> Report</button> </div>
-                          </div>
+                            <div class="button row justify-content-md-center text-center"> 
+                              {% comment %} <div class="col"> <button> <i class="bi bi-share"></i>  Share</button> </div>
+                              <div class="col"> <button><i class="bi bi-chat"></i> Message</button> </div> {% endcomment %}
+                              <div class="col"> <button> <i class="bi bi-envelope"></i> Send an email</button> </div>
+                              {% comment %} <div class="col"> <button><i class="bi bi-info-circle"></i> Report</button> </div> {% endcomment %}
+                            </div>
                          
                       </div>
                       </div>

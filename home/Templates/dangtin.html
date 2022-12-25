@@ -50,7 +50,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="Select" class="form-label">Loại</label>
-                    <select name ="loai" id="Select" class="form-select">
+                    <select name ="loai" id="Select1" class="form-select" onchange="getOption()">
                       <option>Ví/Bóp</option>
                       <option>Giấy tờ</option>
                       <option>CCCD/CMND</option>
@@ -66,7 +66,7 @@
                     </div>
                   </div> {% endcomment %}
                   <div class="mb-3">
-                    <label for="TextInput" class="form-label"> Mô Tả Chi Tiết</label>
+                    <label for="TextInput" class="form-label">Mô Tả Chi Tiết</label>
                     <textarea name="mota" style="width:100%; height:200px">   </textarea>
                   </div>
   
@@ -81,9 +81,26 @@
           
                 <fieldset >
                   <legend> <i class="bi bi-geo-alt"></i> Địa Chỉ</legend>
-                  <div class="mb-3">
+                  {% comment %} <div class="mb-3">
                     <label for="TextInput" class="form-label">Địa Chỉ Rơi</label>
                     <input name="diachi" type="text" id="TextInput" class="form-control" placeholder="Địa chỉ">
+                  </div> {% endcomment %}
+                  <div class="mb-3">
+                    <label for="" class="form-label" >Country</label>
+                    <select id="input_select_country" name ="country" onchange="getOptionCountry()" class="form-select">
+             
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="" class="form-label" >City</label>
+                    <select id="input_select_city" name ="city" onchange="getOptionCity()" class="form-select">
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label" > District</label>
+                    <select id="input_select_district" name ="district" class="form-select">
+                    </select>
                   </div>
                  
                   {% comment %} <div class="mb-3">
@@ -98,7 +115,7 @@
                     <label for="TextInput" class="form-label"> Mô Tả Chi Tiết</label>
                     <textarea name="mota" style="width:100%">   </textarea>
                   </div> {% endcomment %}
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7838.684254869503!2d106.70676642475235!3d10.785086936675276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1547181657956" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  {% comment %} <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7838.684254869503!2d106.70676642475235!3d10.785086936675276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1547181657956" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> {% endcomment %}
                   <div id="map" style="width:100%"></div>
           
                 </fieldset>
@@ -189,7 +206,7 @@
           
         </form>
         </div>
-        
+        <div id="test"> </div>
         <div class="footer container "> 
           {% include 'footer.html' %} 
         </div>
@@ -302,6 +319,106 @@
             });
         })();
         </script>
+
+       
+          <script> 
+            var headers = new Headers();
+              headers.append("X-CSCAPI-KEY", "Rk1GMVh5S2hSRDZqTVczVE04QjU1Rzhyc0ppYkxHSnVMRXducjNoRA==");
+  
+              var requestOptions = {
+                method: 'GET',
+                headers: headers,
+                redirect: 'follow'
+              };
+  
+              fetch("https://api.countrystatecity.in/v1/countries/", requestOptions)
+              .then(response => response.json())
+              .then(function(result) {
+                var htmls =  result.map(function(results){
+        
+                return `<option value="${results.iso2}-${results.name}" >${results.name}</option>`   
+            
+                });
+                var html = htmls.join('');
+                document.getElementById('input_select_country').innerHTML = html;
+              })
+              .catch(error => console.log('error', error));
+
+
+              
+
+  
+          </script>
+
+         
+
+          <script>
+           function getOptionCountry() {
+            var Country = document.getElementById('input_select_country').value;
+            const Country_Array = Country.split("-", 1);
+          
+    
+    
+            var headers = new Headers();
+              headers.append("X-CSCAPI-KEY", "Rk1GMVh5S2hSRDZqTVczVE04QjU1Rzhyc0ppYkxHSnVMRXducjNoRA==");
+  
+              var requestOptions = {
+                method: 'GET',
+                headers: headers,
+                redirect: 'follow'
+              };
+  
+              fetch(`https://api.countrystatecity.in/v1/countries/${Country_Array.toString()}/states`, requestOptions)
+              .then(response => response.json())
+              .then(function(result) {
+                var htmls =  result.map(function(results){
+                  {% comment %} console.log(results.name) {% endcomment %}
+                return `<option value="${results.iso2}-${results.name}"">${results.name}</option>`   
+                });
+                var html = htmls.join('');
+                document.getElementById('input_select_city').innerHTML = html;
+                
+              })
+              .catch(error => console.log('error', error));
+              
+           }
+      
+           </script>
+
+
+           <script>
+            function getOptionCity() {
+             var Country = document.getElementById('input_select_country').value;
+             var City = document.getElementById('input_select_city').value;
+             const Country_Array = Country.split("-", 1);
+             const City_Array = City.split("-", 1);
+     
+             var headers = new Headers();
+               headers.append("X-CSCAPI-KEY", "Rk1GMVh5S2hSRDZqTVczVE04QjU1Rzhyc0ppYkxHSnVMRXducjNoRA==");
+   
+               var requestOptions = {
+                 method: 'GET',
+                 headers: headers,
+                 redirect: 'follow'
+               };
+   
+               fetch(`https://api.countrystatecity.in/v1/countries/${Country_Array.toString()}/states/${City_Array.toString()}/cities`, requestOptions)
+               .then(response => response.json())
+               .then(function(result) {
+                 var htmls =  result.map(function(results){
+                   {% comment %} console.log(results.name) {% endcomment %}
+                 return `<option value="${results.iso2}-${results.name}">${results.name}</option>`   
+                 });
+                 var html = htmls.join('');
+                 document.getElementById('input_select_district').innerHTML = html;
+                 
+               })
+               .catch(error => console.log('error', error));
+               
+            }
+       
+            </script>
+       
       
     </body>
 </html>

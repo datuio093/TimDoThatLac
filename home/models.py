@@ -8,7 +8,9 @@ class mypost(models.Model):
     type = models.TextField()
     object = models.TextField()
     descrip = models.TextField(max_length=10000000)
-    address = models.TextField()
+    address = models.TextField()     #country
+    city = models.TextField(null=True)
+    district = models.TextField(null=True)
     name = models.TextField(max_length=1000)
     pnum = models.IntegerField(null=True, blank=True)
     email = models.TextField(max_length=1000)

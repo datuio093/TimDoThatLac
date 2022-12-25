@@ -40,6 +40,7 @@ urlpatterns = [
     path('mypost/delete/<event_id>',home.delete_post, name="delete_post"),
     path('show/<event_id>', home.show_post, name="show_post"),
   
+     path('myprofile/', home.show_profile, name="show_profile"),
 
 
     path('chitiet/' , home.get_chi_tiet),
