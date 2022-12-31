@@ -1,5 +1,18 @@
+.navbar {
+  position: fixed;
+  z-index: 100;
+  background-color: rgb(0, 0, 0) !important;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background-color: rgb(0, 0, 0) !important;
+}
+
 .login-container {
-  padding-top: 50px;
+  padding-top: 60px;
   justify-content: center;
   display: flex;
 }

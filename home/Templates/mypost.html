@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home</title>
+        <title>My Post</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
    
@@ -28,7 +28,7 @@
               {% for x in post %}
                 {% if x.user == user.username %}
                 <div class="col-sm-4">
-                  <div class="card mb-3" style="max-width: 540px;height:430px" >
+                  <div class="card mb-3"  >
                     <img src={{x.images.url}} class="card-img-top" alt="Image Not Found">
                     <div class="card-body">
                       <h5 class="card-title">{{x.title}}</h5>

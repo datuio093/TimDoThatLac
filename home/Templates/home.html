@@ -60,106 +60,56 @@
         <div class="container"> 
           <div class="card-list"> 
             <div class="container text-center">
-              <h2> Mới nhặt được </h2>
+              <h2> Mới Thất Lạc </h2>
               <div class="row">
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/dienthoaid.webp' %}" class="card-img-top" alt="...">
+
+                {% for x in mypost %}
+  
+                <div class="col-sm-4">
+                  <a href="{% url "show_post" x.id %}"style="text-decoration: none; color:black">
+                  <div class="card mb-3" style="max-width: 540px;height:540px">
+                    <img src="{{x.images.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Nhặt được điện thoại</h5>
-                      <p class="card-text"> Tôi nhặt được điện thoại di động  gần khu vực  công nghệ cao</p>
+                      <h5 class="card-title">{{x.type}}</h5>
+                      <p class="card-text"> {{x.title}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Hồ Chí Minh</li>
-                      <li class="list-group-item">trung1817@gmail.com</li>
-                      <li class="list-group-item">0987283223</li>
+                      <li class="list-group-item">{{x.address}},{{x.city}},{{x.district}}</li>
+                      <li class="list-group-item">{{x.email}}</li>
+                      <li class="list-group-item">0{{x.pnum}}</li>
                     </ul>
               
                   </div>
+                </a>
                 </div>
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/cmndd.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title"> Nhặt Được CMND</h5>
-                      <p class="card-text"> Tôi nhặt được CMND lúc đi làm về thông tin liên lạc bên dưới</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Hà Nội</li>
-                      <li class="list-group-item">thanhbinh@gmail.com</li>
-                      <li class="list-group-item">0562378208</li>
-                    </ul>
-              
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/vid.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Mất Nhặt Được</h5>
-                      <p class="card-text"> Tôi nhặt được cái ví lúc đi làm về thông tin liên lạc bên dưới</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Đà Nẵng</li>
-                      <li class="list-group-item">datthanhphan@gmail.com</li>
-                      <li class="list-group-item">0347698508</li>
-                    </ul>
-
-
-                  </div>
-                </div>
+           
+                {% endfor %}
               </div>
             </div>
           </div>
           <div class="card-list"> 
             <div class="container text-center">
-              <h2> Mới Thất Lạc </h2>
+              <h2> Mới Nhặt Được </h2>
               <div class="row">
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/cmnddn.jpg' %}"  class="card-img-top" alt="...">
+                {% for x in mypost1 %}
+                <a href="{% url "show_post" x.id %}"style="text-decoration: none; color:black" >
+                <div class="col-sm-4">
+                  <div class="card mb-3" style="max-width: 540px;max-height:500px">
+                    <img src="{{x.images.url}}"  class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Mất chứng mình nhân dân</h5>
-                      <p class="card-text">Bị rơi cmmnd như hình trên đường đi làm bề từ quận 2 về Thủ Đức, thông tin liên hệ với tôi như dưới</p>
+                      <h5 class="card-title">{{x.type}}</h5>
+                      <p class="card-text">{{x.title}}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Quận 2 - Thủ Đức</li>
-                      <li class="list-group-item"> hoangha@gmail.com</li>
-                      <li class="list-group-item">0564832233</li>
+                      <li class="list-group-item">{{x.address}},{{x.city}},{{x.district}}</li>
+                      <li class="list-group-item"> {{x.email}}</li>
+                      <li class="list-group-item">0{{x.pnum}}</li>
                     </ul>
               
                   </div>
+                </a>
                 </div>
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/vidn.jpg' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Rớt ví</h5>
-                      <p class="card-text"> Rớt ví ở khu vực công nghệ cao, có cmnd tên : Hồ Hoàng Hà bác nào nhặt được mình xin hậu tạ</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Khu Công Nghê cao - Hồ Chí Minh</li>
-                      <li class="list-group-item"> hahoang@gmail.com</li>
-                      <li class="list-group-item">0987232232</li>
-                    </ul>
-                
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="card mb-3" style="max-width: 540px;">
-                    <img src="{% static 'image/dienthoaidn.jpg' %}"  class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Rơi điện thoại di động</h5>
-                      <p class="card-text">Mình bị rơi điện thoại như hình ở chợ Đầu Mối, ai nhặt được mình hậu tạ</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Chợ Đầu Mối</li>
-                      <li class="list-group-item">hongan@gmail.com </li>
-                      <li class="list-group-item">0347583292</li>
-                    </ul>
-               
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>

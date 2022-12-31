@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Tìm Kiếm</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
    
@@ -26,43 +26,33 @@
                 <div class="row  ">
                   <div class="col-sm-4">
                     <div class="form-left "> 
-                        <form>
+                        <form action="" method="post">
+                         {% csrf_token %}
                             <fieldset >
                               <legend>Bạn muốn tìm gì</legend>
                               <div class="mb-3">
                                 <label for="disabledSelect" class="form-label">Listing Type</label>
-                                <select id="disabledSelect" class="form-select">
+                                <select name="type" id="disabledSelect" class="form-select">
                                   <option>Đồ Thất Lạc</option>
                                   <option>Đồ Nhặt Được</option>
                                 </select>
                               </div>
-                              <div class="mb-3">
+                              {% comment %} <div class="mb-3">
                                 <label for="TextInput" class="form-label">Bạn Muốn Tìm Gì</label>
                                 <input type="text" id="TextInput" class="form-control" placeholder="Bạn Muốn Tìm Gì">
-                              </div>
+                              </div> {% endcomment %}
                        
                               <div class="mb-3">
                                 <label for="disabledSelect" class="form-label">Loại</label>
-                                <select id="disabledSelect" class="form-select">
+                                <select name="loai" id="disabledSelect" class="form-select">
                                   <option>Ví/Bóp</option>
                                   <option>Giấy tờ</option>
                                   <option>CCCD/CMND</option>
                                   <option>Giấy phép lái xe</option>
                                 </select>
                               </div>
-                              <div class="mb-3">
-                                <label for="TextInput" class="form-label">Nơi Ở</label>
-                                <input type="text" id="TextInput" class="form-control" placeholder="Nơi Ở">
-                              </div>
-                              <div class="mb-3">
-                                <label for="disabledSelect" class="form-label">Sắp xếp theo</label>
-                                <select id="disabledSelect" class="form-select">
-                                  <option>Mới nhất</option>
-                                  <option>Được đánh giá cao</option>
-                                  <option>A-Z</option>
-                                  <option>Ngẫu nhiên</option>
-                                </select>
-                              </div>
+                          
+                         
                               <button  type="submit" class="btn btn-outline-dark btn-lg text-center">Submit</button>
                             </fieldset>
                           </form>

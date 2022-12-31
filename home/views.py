@@ -33,7 +33,18 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def get_home(request):
-
+    
+    if request.method == "GET":
+        data = mypost.objects.filter(type="Đồ Thất Lạc").order_by('id')[:3]
+        context = {
+            'mypost':data
+        }
+        data1 = mypost.objects.filter(type="Đồ Nhặt Được").order_by('id')[:3]
+        context = {
+            'mypost1':data1
+        }
+        return render(request, "home.html" , {'mypost':data, 'mypost1':data1})
+    
     return render(request, 'home.html' )
 
 def get_login(request):
@@ -211,9 +222,9 @@ def get_my_post(request):
     return render(request, 'mypost.html', {'post':post})
 
 def get_tim_kiem_post(request):
-    #get data sorted by ID
-    if request.method == "GET":
-        onedata = mypost.objects.filter().order_by('-pk')
+
+    if request.method == "POST":
+        onedata = mypost.objects.filter(type=request.POST['type']).filter(object=request.POST['loai']).order_by('-pk')
         page = request.GET.get('page', 1)
         context = {
             'post':onedata
@@ -227,7 +238,8 @@ def get_tim_kiem_post(request):
             post = paging.page(paging.num_pages)
 
     #render data to html
-    return render(request, 'timkiem.html', {'post':post})
+        return render(request, 'timkiem.html', {'post':post})
+    return render(request, 'timkiem.html')
 
 
 def get_activate(request, uidb64, token):
